@@ -1,0 +1,59 @@
+9장. ch09_파일 io 프로그래밍
+
+1절. txt 파일에 데이터 저장하고 불러오기
+
+	'r' == 'rt'(read text) : 텍스트 읽기모드로 열기. 파일이 없을 경우 예외 발생
+	'w' == 'wt'(write text) : 텍스트 쓰기모드로 열기. 폴더가 없을 경우 예외 발생
+                                           파일이 없으면 생성. 파일이 있으면 덮어씀
+	'a' == 'at'(append text) : 텍스트 쓰기모드로 열기. 폴더가 없을 경우 예외 발생
+                                             파일이 없으면 생성. 파일이 있으면 뒤에 append
+
+  with open('filepath(상대경로/절대경로)', 'w | r | a', encoding) as f:
+	  list 변수 = f.readlines() / 문자변수 = f.read()
+	  f.write(저장할 문자열) / f.writelines(list변수)
+
+
+2절. 피클을 이용한 객체 저장 및 불러오기
+		- 머신러닝 모델저장, 배열저장, 객체저장
+		- 확장자 : pkl, pickle, data
+	2.1 형식이 있는 텍스트 데이터 불러오기
+	2.2 피클링
+
+  with open('filepath', 'wb | rb | ab') as f:
+	  객체리스트변수 = pickle.load(f) - #in(read)
+	  pickle.dump(객체리스트변수,f) - #out(write)
+
+
+3절. CSV파일 읽기/쓰기
+	3.1 reader : CSV파일의 자료를 리스트 데이터로 읽기
+	3.2 wirter : 리스트를 CSV파일로 저장
+	3.3 DictReader : CSV파일을 딕셔너리 데이터로 읽기
+	3.4 DIctWriter : 딕셔너리 데이터(딕셔너리list)를 csv파일로 쓰기
+
+  with open('filepath', 'w | r | a', encoding) as f:
+	  reader = csv.reader(f) - # csv파일을 list데이터로 read
+	  writer = csv.writer(f)
+	  writer.writerows(list 데이터) - # list 데이터를 csv로
+
+	  dic_reader = csv.DictReader(f) - 딕셔너리 데이터로
+	  dic_writer = csv.DictReader(f)
+	  dic_writer.writeheader(); dic_writer.writerows(list)
+
+
+4절. JSON 파일에 저장하고 불러오기(dump/load)
+	4.1 JSON dump(파일에 저장)
+		(1) 딕셔너리 list를 json파일로 저장
+		(2) 객체 list를 json파일로 저장
+		- 객체를 딕셔너리로 바꾸는 함수 필요
+	4.2 JSON load(파일읽기)
+		(1) JSON파일을 딕셔너리 리스트로 읽기
+		(2) JSON파일을 객체 리스트로 읽기
+		- 딕셔너리를 객체로 return하는 함수 필요
+
+  with open('filepath', 'w | r | a', encoding) as f:
+	  리스트변수 = json.load(f) - # 딕셔너리로 읽기
+	  객체리스트변수 = json.load(f , object_hook = 함수명)
+		함수명 : 딕셔너리를 객체로 return
+	  json.dump(리스트변수, f, ensure_ascii, indent)
+	  json.dump(객체리스트, f, default = 클래스명.함수명) 
+		함수명 : 객체를 딕셔너리로 return
