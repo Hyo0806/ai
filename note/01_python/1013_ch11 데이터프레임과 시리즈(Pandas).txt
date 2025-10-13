@@ -1,0 +1,25 @@
+11장 데이터프레임과 시리즈(pandas)
+
+1절. 판다스 패키지
+	import pandas as pd
+
+2절. 데이터프레임 만들기
+	2.1 딕셔너리 리스트를 이용해서 데이터프레임 만들기
+		df.to_dict : 데이터프레임을 딕셔너리로
+		df.to_numpy() : 데이터프레임을 넘파이배열로
+		df.dtypes : 열의 타입
+		df.info() 
+
+	2.2 리스트를 이용해서 데이터프레임 만들기
+		df.head(n) : 상위 n개 행만 가져오기
+		pd.options.display.max_columns : 열 display 갯수
+		pd.options.display.max_rows : 행 display 갯수
+		df.head(1).T : 열의 가독성이 떨어질때 전치행렬 적용
+
+	2.3 read_csv
+		pd.to_datetime : 문자형으로 읽어들인 날짜를 datetime형으로 변경
+		'파일경로', skiprows=[n] : n번째 행을 제외하고 읽어오기		
+		'파일경로', nrows=n : 상위 n행까지 읽어오기
+		'파일경로', sep = ',', '|', '\t' : sep을 기준으로 읽어들이기
+
+	2.4 패키지에서 가져오기
