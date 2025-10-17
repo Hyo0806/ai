@@ -1,0 +1,27 @@
+1) 데이터준비
+
+2) 미적속성 설정
+sns.set(style='darkgrid', 
+        context='notebook',
+        palette='twilight',
+        rc={'figure.figsize':(10,3)})
+
+plt.rc('font',family='Malgun Gothic')
+plt.rc('axes', unicode_minus=False)
+
+3) 그래프 함수
+	① 관계형 그래프 
+		- scatterplot, lineplot → relplot(서브플롯) 
+	② 범주형 그래프
+		- 점도표 : stripplot(무작위로 흩뿌림), swarmplot(겹치지 않음/대신 느림)
+		- 막대그래프 : barplot, pointplot(막대대신 marker가 있는 선)
+		- countplot(bar는 y의 평균값 높이, count는 x의 빈도수 높이)
+		- boxplot, violinplot, boxenplot → catplot(서브플롯)
+
+	③ 쌍관계 그래프 : pairplot
+	④ 밀도 그래프 
+	⑤ 회귀 그래프 : regplot → lmplot(서브플롯)
+
+	서브플롯은 사이즈 지정을 따로 다른 방법
+
+4) 다중그래프 FacetGrid
