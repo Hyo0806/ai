@@ -10,7 +10,7 @@ plt.rc('font',family='Malgun Gothic')
 plt.rc('axes', unicode_minus=False)
 
 3) 그래프 함수
-	① 관계형 그래프 
+	① 관계형 그래프 (수치형)
 		- scatterplot, lineplot → relplot(서브플롯) 
 	② 범주형 그래프
 		- 점도표 : stripplot(무작위로 흩뿌림), swarmplot(겹치지 않음/대신 느림)
