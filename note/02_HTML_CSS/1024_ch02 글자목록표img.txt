@@ -1,0 +1,72 @@
+/**/ css,js 주석
+<!----> html 주석
+
+* 전체 색상 변경
+	<style>
+    		body{background-color : #색상지정}
+	</style>
+
+* 이미지 클릭시 이동
+    	<a href='url'>
+		<img src='파일위치/파일이름-이미지 경로지정' 
+	  	   alt='이미지가 안나올시 나올 메세지' />
+    	</a>
+
+* 헤드
+	<h1 id='top'> 제목 </h1>
+
+*<>과 같은 특수문자
+	&lt; 내용 &gt;
+
+*스페이스 여러번 입력
+	&nbsp;
+
+*단락태그
+	<p>단락간 약간의 마진이 생김. 자동개행 </p>
+
+*글자 스타일
+	<b>진하게</b>
+	<i>이태릭체(CSS로도 구현)</i>
+	<ins>언더라인(CSS로도 구현)</ins>
+	<del>20,000</del>10,000(<span><b>50%할인</b></span>)
+		head - style - span{색상지정}으로 span내 스타일을 지정할 수 있다
+	<pre> 영역 내의 내용을 브라우저에 그대로 출력
+	<a href='top'> 내용 </a> 페이지 내 id가 top인 곳으로 이동
+
+*목록태그
+	<ol> 순서가 있는 목록태그
+		<li></li>
+	</ol>
+	<ul> 순서가 없는 목록태그
+		<li></li>
+	</ul>
+
+*표태그
+	<table>	
+		<caption>테이블 제목</caption>
+		<tr> 한행
+			<th>헤드</th>
+		</tr>
+		<tr> 한행
+			<td>내용</td>
+		</tr>
+		<tr> 한행
+			<td colspan='2'>열병합</td>
+			<td rowspan='2'>행병합</td>
+		</tr>
+*이미지태그
+	<img src='파일위치/파일이름-이미지 경로지정' 
+	  	  alt='이미지가 안나올시 나올 메세지' 
+		  width='', height=''/>
+	<hr color=''/> 선 하나 긋기
+
+*오디오태그
+	<audio src='파일위치/파일이름-오디오 경로지정' 
+	controls='controls' 
+	preload='auto' 
+	loop='loop' : 노래가 끝나면 처음부터 </audio>
+
+*비디오태그
+	<video src='파일위치/파일이름-비디오 경로지정' 
+	controls='controls' preload='auto' loop='loop' 
+	poster='파일위치/파일이름' : 썸네일</audio>

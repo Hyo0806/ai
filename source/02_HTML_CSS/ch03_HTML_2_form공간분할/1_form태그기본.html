@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table { /*border:1px solid gray; 외곽선*/
+            /*테이블을 브라우저 가운데 배치*/
+            width: 290px; /*사이즈를 700 이렇게 하면 사이즈가 넘쳐서 안줄어드는것처럼 보임*/
+            margin: 0px auto; /*밖여백 : 위 오른쪽 아래 왼쪽. auto : 좌우여백 자동으로*/
+        }
+        td,th{padding:5px 10px;} /*안여백 : 위 오른쪽 아래 왼쪽*/
+    </style>
+</head>
+<body>
+    <!--action은 버튼을 눌렀을때 이동하는것. method='get'방식으로 쓰면 다음같은경우는 
+        아이디와 비밀번호가 그대로 노출. 근데 그걸 가리는 방식은 진짜 뭘 수행해야해서 
+        지금은 아직 get방식 할것-->
+    닉네임<input type="text" name="nickname" value="form밖의 input은 전달 안됨. 파라미터 name이 필수속성" />
+    <form action="http://www.daum.net" method="get">
+        <table>
+            <tr>
+                <!--name이라는 속성이 없으면 전달이 안됨-->
+                <th>아이디</th><td><input type="text" name="id"</td>
+            </tr>
+            <tr>
+                <th>비밀번호</th><td><input type="password" name="pw"</td>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="submit" value="로그인"</th>
+            </tr>
+        </table>
+        <!--input 입력받는것-->
+    </form> 
+</body>
+</html>
