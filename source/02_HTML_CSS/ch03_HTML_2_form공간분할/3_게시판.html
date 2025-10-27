@@ -4,19 +4,24 @@
     <meta charset="utf-8" />
     <title></title>
     <style>
+        /*원래 tr에서는 보더가 안일어나는데 table에서 끊는작업을 한것*/
         table{border-collapse : collapse;}
         tr{border-top : 1px solid green;
            border-bottom : 1px solid green;
         }
+        td{padding:5px 10px;}
     </style>
     <script>
-        function chk() {
-            //submit 안일어나는 조건 : 작성자를 ""일 때
-            if (frm.name.value == '') {
-                alert('작성자명은 필수입력 사항입니다');
+        function chk() { // 파이썬의 def와 같음
+            //submit 안일어나는 조건
+            //if (!frm.name.value.trim()) { // trim() : 좌우 space 없애기(파이썬 strip())
+            // 작성자명에 space가 아닌 한글자 이상 submit
+            if (frm.name.value.trim().length < 2) { // 작성자명은 2글자 이상 submit
+                alert('작성자명은 2글자 이상 필수입력 사항입니다');
                 frm.name.focus();
                 return false; //submit 안일어나도록
             }
+            return true; //submit 일어나도록
         }
     </script>
 </head>

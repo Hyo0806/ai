@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <!--아무것도 입력안하면 내 페이지로감. action도 안쓰면 내페이지로 가는게 기본-->
+    <form action="">
+        <table>
+    <tr>
+        <td>아이디</td>
+        <!--size="9" 는 9글자까지 예쁜 사이즈. 더 입력할수있음-->
+        <td>
+            <!--hidden은 사용자에게 보이지 않지만 적용되는것-->
+            <input type="hidden" name="data" value="숨겨서 보내고싶은 데이터" />
+            <input type="text" name="id" size="9" />
+            <input type="button" value="중복확인" />
+        </td>
+    </tr>
+    <tr>
+        <td>비밀번호</td>
+        <td><input type="password" name="pw" /></td>
+    </tr>
+    <tr>
+        <td>전화번호</td>
+        <td>
+            <!--pc버전은 tel과 text의 차이없이 문자도 입력가능하지만 모바일에서는 숫자패드가 나오게함-->
+            <input type="tel" name="phone1" size="1" /> -
+            <input type="tel" name="phone2" size="1" /> -
+            <input type="tel" name="phone3" size="1" />
+        </td>
+    </tr>
+    <tr>
+        <td>경력</td>
+        <!--마이너스가 나오지 않게하기위한 최소값설정-->
+        <td><input type="number" name="career" min="0" max="70"/></td>
+    </tr>
+    <tr>
+        <td>이메일</td>
+        <!--type='email'은 @가 가운데만 있으면 된다. 그래서 정말 메일형식으로 하려면 정규표현식이나 이런것필요-->
+        <td><input type="email" name="email" /></td>
+    </tr>
+    <tr>
+        <td>사진</td>
+        <td><input type="file" name="filename" /></td>
+    </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <!--그냥 radio버튼만 만들어두면 사용자에게 어떤 버튼인지 알 수 없음. 그래서 >뒤에 남, 여 같은 설명
+                    기본적으로 선택되어있게하는게 checked='checked'
+                    radio를 만들때 중요한건 파라미터 이름을 같게 해야함. 아니면 둘다 선택할 수 있게됨-->
+                    <input type="radio" name="gender" value="m" checked="checked" />남
+                    <input type="radio" name="gender" value="f" />여
+                </td>
+            </tr>
+            <tr>
+                <td>사용언어</td>
+                <td>
+                    <!--checkbox를 하면 여러개 선택가능. 다시 눌러서 끌수도 있다. 그러나 radio는 무조건 하나이상 선택됨-->
+                    <input type="checkbox" name="lang" value="kor" checked="checked" />한국어
+                    <input type="checkbox" name="lang" value="eng" />영어
+                    <input type="checkbox" name="lang" value="chi" />중국어
+                </td>
+            </tr>
+            <tr>
+                <td>국적</td>
+                <td>
+                    <select name="nation">
+                        <!--대한민국과 다르게 kor이라고 나오게 하고 싶으면 value에 값을 넣는다.
+                        selected를 넣지 않으면 무조건 0방이 나옴-->
+                        <option value="kor">대한민국</option>
+                        <option selected="selected">미국</option>
+                        <option>중국</option>
+                        <option>인도</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>좋아하는 음식</td>
+                <td>
+                    <!--multiple을 넣으면 여러개 선택가능. size='3'이면 화면에 3개 보인다는것-->
+                    <select name="food" multiple="multiple" size="3">
+                        <option>볶음밥</option>
+                        <option>비빔밥</option>
+                        <option>주먹밥</option>
+                        <option>탕수육</option>
+                        <option>불고기</option>
+                        <option>순두부</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>자기소개</td>
+                <!--textarea 사이에 넣으면 화면상에 기본적으로 떠있는데 지울수도 있음-->
+                <td><textarea name="intro" cols="25" rows="3"> 나는 뭐입니다</textarea></td>
+            </tr>
+            <tr>
+                <!--이 외의 달력들은 제이커리? 에 많이 제공되어있다고함-->
+                <td>생년월일</td>
+                <td><input type="date" name="birth" /></td>
+            </tr>
+            <!--여기서부터는 많이 안씀-->
+            <tr>
+                <td>git주소</td>
+                <td><input type="url" name="git" /></td>
+            </tr>
+            <tr>
+                <td>좋아하는 색상<br />좋아하는정도</td>
+                <td>
+                    <input type="color" name="color" /><br />
+                    0<input type="range" name="range" min="0" max="100" step="10" value="50" />100
+                </td>
+            </tr>
+            <tr>
+                <!--value는 url 화면에 보이는 글자-->
+                <th colspan="2">
+                    <input type="submit" value="입력" />
+                    <input type="reset" value="초기화" />
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
