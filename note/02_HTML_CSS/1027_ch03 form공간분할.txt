@@ -9,3 +9,9 @@
 * 경력 <input type='number' name='career' min='0' max='n'/>
 * 이메일 <input type='email' name='email'/>
 	정규표현식 사용시
+* 성별 <input type='radio' checked='checked'(기본선택)/>설명 : 하나만 선택
+* 사용언어 <input type='checkbox'/>설명 : 다중선택 가능
+* 국적 선택 <select>
+		<option>옵션명</option> : 하나만 선택
+* 음식 선택 <select multiple='multiple' size='한번에 보여주고싶은 수'>
+		<option>옵션명</option> : 중복선택 가능

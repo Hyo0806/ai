@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div#wrap{
+            width:600px;
+            margin:0 auto;
+        }
+        /* .logo와 title을 수평으로 */
+        #wrap > #header{ /*자손선택자*/
+            overflow:hidden;
+        }
+        #wrap .logo{
+            float:left;
+            padding:10px 30px 10px, 150px;
+        }
+        #wrap .title{
+            float:left;
+            padding:20px 150px 10px 30px;
+        }
+        div p{ /*후손선택자 div 밑의 p(자손, 후손 모두포함)*/
+            font-size:150%;
+        }
+        div > p{ /*자손선택자 div 바로밑의 p(자손만)*/
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo">
+                <h1>LOGO</h1>
+            </div>
+            <div class="title">
+                <h2>OO주식회사</h2>
+            </div>
+        </div><!--header-->
+        
+        <div id="content">
+            <p>소리조차 모두가 무엇인지 때 잊지 모래 증발하는 아무 매어놓은 나 노루, 할 없이 지나고 그리고 한 춥고 있다 있든 풀밭 까닭이요, 때 가시는 가시옵소서. 바다는 삶은 변할 연인이었던 봄이 그 불이 죽어도 잎들은 생명이 붉은 때 쌓인 대지의 실망하고 시절 피어나듯이 향할 아이들의 패, 마리아 아름따다 완성된다는 이렇게 노을이 새겨지는 입맞춤하는 저녁 백골이 내린 싣고 나를 얻어 사는 이제 한 흐르는 때에는 별을 달려가는 가시는 모습 함께인 그 만들고 넋이 나는 별빛이 나는 흐르는 유유히 날에 또 꽃밭에 향할 없는 이름과, 못하는 내가 유년의 부끄러운 그 꿈꿀 춥고 고운 내가 써요.</p>
+            <ul>
+                <li>
+                    <p>목구멍을 때에 언덕 역겨워 고독은 때 것은 그때. 불어오는 너무나 있든 때 쉬이 번을 사랑했지 하늘을 소학교 별 딴은 사랑했고 날에 아름다운 좋은 먼 가시옵소서. 좋아요</p>
+                </li>
+                <li>
+                    <p>향한 걸음 다 라이너 동경과 언덕 그리하여 별빛이 가실 때 불현듯 강이 이렇게 님이 있으랴 말 무성할 이 아름따다 죽은 헤어져 한 싣고 가난한 걸음 입니다.</p>
+                </li>
+            </ul>
+        </div><!--content-->
+        
+        <div id="footer">
+            <p>서울시 관악구 신림동</p>
+        </div>
+    </div>
+</body>
+</html>
