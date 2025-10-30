@@ -1,5 +1,5 @@
-/*****css/shoppingmall.css*****/
-/*****페이지 초기화:폰트설정, margin:0/padding:0, a, li*****/
+/***************  css/shoppingmall.css  *******************************************/
+/***************  페이지 초기화:폰트설정, margin:0/padding:0, a, li  ***************/
 @font-face {
     font-family: 'Merriweather-Regular';
     src: url('../font/Merriweather-Regular.ttf'); /*css파일 기준으로 경로 설정. ..은 폴더 상위폴더를 말함*/
@@ -8,9 +8,45 @@
     font-family: 'Merriweather-Light';
     src: url('../font/Merriweather-Light.ttf'); /*css파일 기준으로 경로 설정. ..은 폴더 상위폴더를 말함*/
 }
+@font-face {
+    font-family: 'ArchivoBlack-Regular';
+    src: url('../font/ArchivoBlack-Regular.ttf');
+}
+@font-face {
+    font-family: 'GravitasOne-Regular';
+    src: url('../font/GravitasOne-Regular.ttf');
+}
+@font-face {
+    font-family: 'LobsterTwo-Bold';
+    src: url('../font/LobsterTwo-Bold.ttf');
+}
+@font-face {
+    font-family: 'LobsterTwo-BoldItalic';
+    src: url('../font/LobsterTwo-BoldItalic.ttf');
+}
+@font-face {
+    font-family: 'LobsterTwo-Italic';
+    src: url('../font/LobsterTwo-Italic.ttf');
+}
+@font-face {
+    font-family: 'LobsterTwo-Regular';
+    src: url('../font/LobsterTwo-Regular.ttf');
+}
+@font-face {
+    font-family: 'LibreBaskerville-Bold';
+    src: url('../font/LibreBaskerville-Bold.ttf');
+}
+@font-face {
+    font-family: 'LibreBaskerville-Italic';
+    src: url('../font/LibreBaskerville-Italic.ttf');
+}
+@font-face {
+    font-family: 'LibreBaskerville-Regular';
+    src: url('../font/LibreBaskerville-Regular.ttf');
+}
 *{
     margin: 0; padding: 0;
-    font-family: 'Merriweather-Regular';
+    font-family: 'LibreBaskerville-Regular';
 }
 a{
     text-decoration: none;
@@ -19,4 +55,162 @@ a{
 }
 li{
     list-style: none;
+}
+
+
+/******************************  header  ******************************/
+/******************************  header .gnb  *************************/
+header .gnb{
+    background-color: black;
+}
+header .gnb a{color: white;}
+header .gnb ul{
+    width: 1000px; 
+    height: 30px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+header .gnb ul li{
+    float: left;
+    width: 90px; margin: 0 5px;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+/******************************  header .logo  ***************************/
+header .logo{
+    font-family: "Pacifico", cursive;
+    width: 200px; margin: 30px auto;
+    border: 1px solid gainsboro;
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+}
+
+
+/******************************  header .hitmenu  ************************/
+header .hitmenu ul{
+    width: 1000px; margin: 0 auto 5px;
+    overflow: hidden;
+}
+header .hitmenu ul li{
+    float: right;
+    border: 1px solid black;
+}
+header .hitmenu ul li a{
+    padding: 10px 30px;
+}
+header .hitmenu ul li:last-child{border-radius: 10px 0 0 10px;}
+header .hitmenu ul li:first-child{border-radius: 0 10px 10px 0;}
+
+
+/******************************  header .lnb  ****************************/
+header .lnb{
+    border-top: 1px dashed #555555;
+    border-bottom: 1px dashed #555555;
+    box-sizing: border-box;
+}
+header .lnb ul{
+    width: 1000px; margin: 0 auto;
+    overflow: hidden;
+}
+header .lnb ul li{
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 5px;
+    width: 115px;
+    font-weight: bold;
+}
+
+
+/******************************  #content  *******************************/
+#content{
+    width: 1000px; margin: 0 auto;
+}
+
+
+/******************************  #content .section1  *********************/
+#content .section1{
+    overflow: hidden;
+}
+#content .section1 > div{
+    float: left;
+    border: 1px solid #555555;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 400px;
+    text-align: center;
+}
+.slide_banner{
+    width: 700px;
+    
+}
+.side_banner{
+    width: 300px;
+}
+
+
+/******************************  #content .section2  *********************/
+.hit_product{
+    width: 1000px; margin: 5px auto;
+    border: 1px solid #555555;
+    box-sizing: border-box;
+}
+.hit_product ul{
+    overflow: hidden;
+    margin: 0 auto;
+}
+.hit_product ul li{
+    float: left;
+    border: 1px solid #555555;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 400px;
+    width: 24%;
+    margin-left: 0.8%;
+}
+
+.md_product{
+    width: 1000px; margin: 5px auto;
+    border: 1px solid #555555;
+    box-sizing: border-box;
+}
+.md_product ul{
+    overflow: hidden;
+    margin: 0 auto;
+}
+.md_product ul li{
+    float: left;
+    border: 1px solid #555555;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 400px;
+    width: 24%;
+    margin-left: 0.8%;
+}
+
+
+/******************************  #footer  *****************************/
+footer{width: 1000px; margin: 0 auto;}
+
+#office{
+    overflow: hidden;
+    width: 1000px; margin: 0 0,05%;
+}
+footer div:nth-child(-n+3){
+    float: left;
+    border: 1px solid #555555;
+    box-sizing: border-box;
+    width: 33.3%;
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+.copyright{
+    clear: both; /*앞 태그에서 전달받은 float를 */
+    background-color: black;
+    color: white;
+    text-align: center;
 }

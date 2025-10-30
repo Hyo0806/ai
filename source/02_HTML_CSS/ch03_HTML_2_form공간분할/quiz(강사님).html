@@ -9,14 +9,14 @@
     </style>
     <script>
     function chk() {
-      if (frm.pw.value != frm.pwchk.value) {
+        if (frm.pw.value != frm.pwchk.value) {
         alert("비밀번호를 확인하세요");
         frm.pw.value = "";
         frm.pwchk.value = "";
         frm.pw.focus();
         return false;
-      }
-      return true;
+    }
+        return true;
     }
     </script>
 </head>
@@ -33,20 +33,20 @@
                         <td><label for="name">이 름<b>*</b></label></td>
                         <td>
                             <input type="text" id="name" name="name"
-                                   autofocus="autofocus"
-                                   placeholder="이름은 2글자 이상"
-                                   pattern="[a-zA-Z가-힣]{2,}"
-                                   title="이름은 2글자이상입니다"
-                                   required="required">
+                                autofocus="autofocus"
+                                placeholder="이름은 2글자 이상"
+                                pattern="[a-zA-Z가-힣]{2,}"
+                                title="이름은 2글자이상입니다"
+                                required="required">
                         </td>
                     </tr>
                     <tr>
                         <td><label for="id">아이디<b>*</b></label></td>
                         <td>
                             <input type="text" id="id" name="id"
-                                   placeholder="ID는 4글자 이상"
-                                   pattern="[a-zA-Z0-9]{4,}"
-                                   required="required">
+                                placeholder="ID는 4글자 이상"
+                                pattern="[a-zA-Z0-9]{4,}"
+                                required="required">
                         </td>
                     </tr>
                     <tr>
@@ -65,20 +65,20 @@
                         <td><label for="tel">전화<b>*</b></label></td>
                         <td>
                             <input type="text" id="tel" name="tel"
-                                   placeholder="xx-xxx-xxxx/000-0000-0000"
-                                   pattern="\d{2,3}-\d{3,4}-\d{4}"
-                                   title="xx-xxx-xxxx 또는 000-0000-0000형식의 전화번호 형식을 지켜주세요"
-                                   required="required">
+                                placeholder="xx-xxx-xxxx/000-0000-0000"
+                                pattern="\d{2,3}-\d{3,4}-\d{4}"
+                                title="xx-xxx-xxxx 또는 000-0000-0000형식의 전화번호 형식을 지켜주세요"
+                                required="required">
                         </td>
                     </tr>
                     <tr>
                         <td><label for="mail">이메일<b>*</b></label></td>
                         <td>
                             <input type="text" id="mail" name="mail"
-                                   pattern="[a-zA-Z0-9가-힣\.]+@[a-zA-Z0-9]+(\.[a-z]+){1,2}"
-                                   placeholder="id@domain.com또는co.kr"
-                                   title="메일 형식을 확인하세요"
-                                   required="required">
+                                pattern="[a-zA-Z0-9가-힣\.]+@[a-zA-Z0-9]+(\.[a-z]+){1,2}"
+                                placeholder="id@domain.com또는co.kr"
+                                title="메일 형식을 확인하세요"
+                                required="required">
                         </td>
                     </tr>
                 </table>
