@@ -1,0 +1,9 @@
+01. 단위 : px, em(배수), %, pt(문자에만 사용)
+	3pt = 4px
+02. url함수
+	@font-face{
+		font-family:'';
+		src : url(파일위치/파일명);
+	background: url(파일위치/파일명) no-repeat; 사진 반복안함
+03. display
+	
