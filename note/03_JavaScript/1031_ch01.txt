@@ -1,0 +1,14 @@
+*위치
+<script></script> : head, body, html밖 등 어느 위치나 들어갈 수 있음. 
+
+*화면에 입력
+<script>
+	document.writeln('입력내용' + 변수);
+</script>
+
+*변수 종류
+	var : 변수의 재선언 가능. 전역변수로 사용(한 파일 전체 scope 적용)
+	let : 변수의 재선언 불가. 지역변수로 사용(선언된 블록 scope 적용)
+	const : 새로운 값을 재할당 할 수 없음. 상수
+
+*실행 터미널(ctrl + j)에서 node 3.js 실행

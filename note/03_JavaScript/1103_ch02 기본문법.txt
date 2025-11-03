@@ -1,0 +1,15 @@
+01. 변수자료형
+	*자료형
+		string, number, boolean, function, object(array), undefined
+
+	*console.log : 파이썬의 print와 같은 역할
+	*typeof : 파이썬의 dtype과 같은 역할
+
+02. 복합대입연산자
+	*+=
+
+03. confirm, alert, prompt : html 파일에서만 사용가능
+	*confirm - 변수에 true, false를 받음
+
+	*비교연산자 (==) : 값이 같은지 여부(타입이 일치하지 않으면 타입을 일치시킨 후 같은지 여부확인)
+            *비교연산자 (===) : 값과 타입이 같은지 여부(타입을 일치시키지 않음)
