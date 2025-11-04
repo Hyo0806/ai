@@ -23,7 +23,7 @@
         // 3. 형변환된 숫자가 NaN여부(isNaN함수 이용)
         // 3-1. NaN이면 wrong++
         // 3-2. NaN이 아니면 right++, sum에 입력한 숫자 누적
-            if (scoreStr && scoreStr.trim() && !isNaN(score) && score>=0 && score<=0){
+            if (scoreStr && scoreStr.trim() && !isNaN(score) && score>=0 && score<=100){
                 right++;
                 sum += score;
             }else{

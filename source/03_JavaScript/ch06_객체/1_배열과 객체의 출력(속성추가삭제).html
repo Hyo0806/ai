@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        var arr = [1,2,'홍길동']; // == {'0':1, '1':1, '2':'홍길동'} - 일반for문, for-in, forEach() / 인덱스필요없을때 for-of
+        for(let idx in arr){
+            document.writeln(`${idx} - 타입 : ${typeof(idx)} - ${arr[idx]} <br>`);
+        }
+        var obj = {'name':'홍길동', 'age':20}; // 객체. for-in문만 사용가능
+        for(let key in obj){
+            document.writeln(`${key} : ${obj[key]} <br>`); //obj.name 불가능 key자체가 string으로 받기때문
+        }
+        obj.address = '서울시 관악구'; // 객체 속성 추가. 배열에 추가는 push
+        obj.hobby = '노래';
+        
+        document.writeln('<h4>속성 추가 후</h4>')
+        for(let key in obj){
+            document.writeln(`${key} : ${obj[key]} <br>`); 
+        }
+
+        delete(obj.age);
+        document.writeln('<h4>속성 삭제 후</h4>')
+        for(let key in obj){
+            document.writeln(`${key} : ${obj[key]} <br>`); 
+        }
+    </script>
+</head>
+        
+<body>
+    
+</body>
+</html>

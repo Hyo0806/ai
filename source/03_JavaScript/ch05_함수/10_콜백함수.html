@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        function callTenTimes(callback){ // 콜백함수 : 매개변수로 들어온 함수
+            for(i=0 ; i<10 ; i++){
+                callback();
+            }
+        }
+        callTenTimes(()=> document.writeln(new Date()+'<br>')); // 3같은것 넣으면 안되고 함수를 넣어야함. 여기에 화살표함수 많이 넣음
+
+        // 선언적 함수를 만들어서 넣어도 상관없음
+        function test(){
+            document.writeln(new Date()+'<br>');
+        }
+        callTenTimes(test);
+    </script>
+</head>
+        
+<body>
+    
+</body>
+</html>

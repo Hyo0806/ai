@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        body{
+            background-size: 100%; /*가로사이즈 100%. 세로는 반복*/
+            font-weight: bold;
+            font-size: 1.5em;
+            /*color: lightgoldenrodyellow;*/
+        }
+    </style>
+    <script>
+        // img01.png(노란글씨) img02.png(파란글씨) img03.png(하얀글씨)
+        let sec = 0; // 몇초 지났는지 저장 변수
+        const img = ['url(ch05_img/img03.png)', 'url(ch05_img/img01.png)', 'url(ch05_img/img02.png)'];
+        const color = ['white', 'yellow', 'lightgoldenrodyellow'];
+        //let time = new Date().toLocaleString();
+        document.writeln(new Date().toLocaleString());
+        // document.body.innerHTML += '<p>' + sec + '초 지남</p>'
+        // document.body.style = 'background-image:' + img[sec%img.length];
+        document.body.style.backgroundImage = img[0];
+        document.body.style.color = color[0];
+        
+        let id = setInterval(() => {
+            sec++; 
+            document.body.innerHTML = `${new Date().toLocaleString()}<br>${sec}초 지남`;
+            document.body.style = 'background-image:' + img[sec%img.length];
+            document.body.style.color = color[sec%img.length]
+        }, 1000);
+
+        setTimeout(() => {
+            clearInterval(id);
+            document.body.innerHTML += '<br>타이머 중지'
+        }, 10000);
+        
+    </script>
+</head>
+        
+<body>
+    
+</body>
+</html>
