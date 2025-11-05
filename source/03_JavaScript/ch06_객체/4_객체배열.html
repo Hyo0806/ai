@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        let students = [{name: '윤인성', kor: 87, mat: 98, eng: 88, sci: 95 },
+                        { name: '연하진', kor: 92, mat: 98, eng: 96, sci: 98 },
+                        { name: '구지연', kor: 76, mat: 96, eng: 94, sci: 90 },
+                        { name: '나선주', kor: 98, mat: 92, eng: 96, sci: 92 },
+                        { name: '윤아린', kor: 95, mat: 98, eng: 98, sci: 98 }
+        ];
+        for(var idx in students){
+            students[idx].getSum = function(){
+                return this.kor + this.mat + this.eng + this.sci;
+            };
+            students[idx].getAvg = function(){
+                return this.getSum()/4;
+            };
+            students[idx].toString = function(){
+                let output = '';
+                for(let key in this){
+                    if(key != 'getSum' && key != 'getAvg' && key != 'toString'){
+                        output += key + ' : ' + this[key] + ' &nbsp; ';
+                    }else if(key == 'getSum' || key == 'getAvg'){
+                        output += key.substring(3).toLowerCase() + ' : ' + this[key]() + ' &nbsp; ' 
+                        // 파이썬의 key[0:3]과 같음. getSum의 3번째부터 끝까지라는말. tolowercase/touppercase는 소문자나 대문자로 변경 
+                    } // if문 끝   
+                } // for문 끝
+                return output;
+            }; // toString
+        }; // for문
+        document.writeln('<h4>1. 일반 for문</h4>');
+        for(let idx=0 ; idx<students.length ; idx++){
+            document.writeln(`${idx}번째 : ${students[idx]} <br>`);
+        }
+        document.writeln('<h4>2. for-in문</h4>');
+        for(let idx in students){
+            document.writeln(`${idx}번째 : ${students[idx]} <br>`);
+        }
+        document.writeln('<h4>3. for-of문</h4>');
+        for(let student of students){
+            document.writeln(`${student} <br>`);
+        }
+        document.writeln('<h4>4. forEach()</h4>');
+        students.forEach((data, idx) => document.writeln(`${idx}번째 : ${data} <br>`));
+        
+        document.writeln('<h4>5. forEach(index필요없는 경우)</h4>');
+        students.forEach(data => document.writeln(`${data} <br>`));
+    </script>
+</head>
+        
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        var str = 'abc1d@ef';
+        //패턴
+        var patternNum = /[0-9]/; // 숫자 정규표현식 (/~~/ : 정규표현식 리터럴 구문)
+        var patternEng = /[a-zA-Z]/; // 알파벳문자 정규표현식
+        var patternKor = /[가-힣ㄱ-ㅎㅏ-ㅣ]/; // 한글문자 정규표현식
+        var patternSpe = /[~`!@#$%^&*()_\-+=\|\\\[\]{}'":;?\/<>,\.]/; // -를 하면 )부터 -뒤까지 라고 인식해서 \- 로 써준것
+        
+        // 정규표현식패턴.test(str) : str에 패턴이 포함되어있는지 여부
+        document.writeln(`str에 숫자 포함 : ${patternNum.test(str)}<br>`);
+        document.writeln(`str에 알파벳 포함 : ${patternEng.test(str)}<br>`);
+        document.writeln(`str에 한글 포함 : ${patternKor.test(str)}<br>`);
+        document.writeln(`str에 특수문자 포함 : ${patternSpe.test(str)}<br><hr>`);
+
+        // str.match(정규표현식패턴) : str이 정규표현식 패턴과 맞는지
+        // 정규표현식과 매칭되는 문자열과 캡처 그룹을 배열로 return
+        // 정규표현식과 일치되지 않으면 null을 return
+        var patternEmail = /^\w+@\w+(\.\w+){1,2}$/; // 시작에 ^ 끝에 $를 넣으면 포함이 아니라 저것만 이메일로 인식함
+        var email1 = 'hong@hong.com';
+        var email2 = 'hong@hong.com@abc';
+        document.writeln(`email1 결과 : ${email1.match(patternEmail)}<br>`);
+        document.writeln(`email2 결과 : ${email2.match(patternEmail)}<br><hr>`);
+
+        // match함수를 이용한 이메일 유효성 검사
+        if(email1.match(patternEmail)){
+            document.writeln(`email1은 메일형식입니다<br>`);
+        }else{
+            document.writeln(`email1은 메일형식이 아닙니다<br>`);
+        }
+        if(email2.match(patternEmail)){
+            document.writeln(`email2는 메일형식입니다<br>`);
+        }else{
+            document.writeln(`email2는 메일형식이 아닙니다<br>`);
+        }
+
+        // test함수를 이용한 이메일 유효성 검사
+        if(patternEmail.test(email1)){
+            document.writeln(`email1은 메일형식입니다<br>`);
+        }else{
+            document.writeln(`email1은 메일형식이 아닙니다<br>`);
+        }
+        if(patternEmail.test(email2)){
+            document.writeln(`email2는 메일형식입니다<br>`);
+        }else{
+            document.writeln(`email2는 메일형식이 아닙니다<br>`);
+        }
+    </script>
+</head>
+        
+<body>
+    <!--
+    정규표현식(regex)
+    1. 참조 : https://ko.wikipedia.org/wiki/ 위키백과
+    2. 간략문법
+        \d (숫자와 매치. [0-9]와 동일)
+        \D (숫자가 아닌 것)
+        \w (영문자나 숫자 [a-zA-Z0-9]와 동일)
+        \W (영문자나 숫자가 아닌 문자)
+        . (문자)
+        \. (.)
+        \- (-)
+        {2,} (2번 이상 반복)
+        {2, 4} (2~4회 반복)
+        ?      (0번이나 1번 의미)
+        +      (1번 이상 반복)
+        *      (0번 이상 반복)
+
+    3.정규표현식 연습장 : https://regexr.com/
+        ex) 전화번호 : 02 888 7777 / 028887777 / 010-9999-9999 / 010.9999.9999 / 02)999-9999
+            \d{2,3}[ \-\.)]?\d{3,4}[ \-\.]?\d{4}
+            (02|031|010)[ \-\.)]?\d{3,4}[ \-\.]?\d{4}
+            0\d{1,2}[ \-\.)]?\d{3,4}[ \-\.]?\d{4}
+        ex) 이메일 : abc12@naver.com / abc12@sns.co.kr
+            \w+@\w+(\.\w+){1,2}
+        ex) 주민번호 : 981212-1052525
+            \d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|30|31)-[1-4]\d{6}
+    4.소스 구현-->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        var arr1 = ['zoo', 'hong', 'kim', 'park', 'jung'];
+        var arr2 = [52, 100, 12, 94, 32];
+        document.writeln(`arr1 연결 : ${arr1.join(', ')}<br><hr>`);
+        
+        // 깊은복사 방식들
+        let originalArr = arr1.slice(); 
+        originalArr = [...arr1]; 
+        originalArr = Array.from(arr1);
+
+        // 문자 정렬
+        arr1.sort(); // ascii 코드 순으로 오름차순 정렬
+        document.writeln(`원본(정렬전) : ${originalArr}<br>`);
+        document.writeln(`정렬후 : ${arr1}<br>`);
+        arr1.reverse(); // arr순서를 reverse
+        document.writeln(`내림차순 정렬후 : ${arr1}<br><hr>`);
+
+        // 숫자 정렬
+        document.writeln(`arr2 정렬전 : ${arr2}<br>`);
+        arr2.sort();
+        document.writeln(`arr2 그냥 sort 정렬후 : ${arr2}<br>`); // 숫자를 ascii코드로 바꿔서 소트하기 때문에 이렇게 소트하면안됨
+        arr2.sort(function(left, right){
+            return left-right; // 오름차순 정렬. 음수라는건 오른쪽에 있는게 더 크니까
+            // return right-left; // 내림차순 정렬
+        });
+        document.writeln(`arr2 정렬후 : ${arr2}<br>`);
+        let top3 = arr2.slice(0, 3); // 0번째부터 3번째 앞까지 추출(깊은복사)
+        document.writeln(`arr2 top3 : ${top3}<br>`);
+    </script>
+</head>
+        
+<body>
+    
+</body>
+</html>

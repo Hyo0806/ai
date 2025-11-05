@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        let str = '   abc @ ABC @ abc   ';
+        document.writeln(`원본 : ${str}<br>`);
+        document.writeln(`글자수 : ${str.length}<br>`);
+        document.writeln(`글자연결 : ${str.concat('끝')}<br><hr>`);
+        
+        // str.substring(a,b) : a번째부터 b번째 앞까지 추출 / 파이썬의 str[a:b] 역할
+        // str.substring(a) : a번째부터 끝까지 추출 / 파이썬의 str[a:] 역할
+        document.writeln(`3번째부터 6번째 앞 추출 : [${str.substring(3,6)}]<br>`);
+        
+        // str.substr(a,b) : a번째부터 b글자 추출
+        document.writeln(`3번째부터 6자 추출 : [${str.substr(3,6)}]<br><hr>`);
+
+        // index
+        document.writeln(`맨처음 @의 위치 : ${str.indexOf('@')}<br>`);
+        // 없는 index 찾을시 -1
+        document.writeln(`맨처음 z의 위치 : ${str.indexOf('z')}<br>`); 
+        document.writeln(`맨 뒤 @의 위치 : ${str.lastIndexOf('@')}<br><hr>`);
+
+        document.writeln(`앞뒤 space 제거 : [${str.trim()}]<br><hr>`);
+
+        // 대소문자
+        document.writeln(`대문자로 : ${str.toUpperCase()}<br>`);
+        document.writeln(`소문자로 : ${str.toLowerCase()}<br><hr>`);
+
+        // replace(replaceAll은 자동완성은 안되지만 사용가능)
+        document.writeln(`첫@를 9로 수정 : ${str.replace('@', '9')}<br>`);
+        document.writeln(`@를 9로 모두 수정 : ${str.replaceAll('@', '9')}<br>`);
+        document.writeln(`space 모두 제거 : ${str.replaceAll(' ','')}`);
+    </script>
+</head>
+        
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        //let fun = function(){alert('hello');}; // 밑에 객체에 화살표함수를 넣을 수 없음
+        let person = {
+            'name':'홍길동', // 속성변수
+            'age':20,        // 속성변수
+            'eat': function(food){ // 메소드(화살표함수 사용 불가. this가 안먹어서 this를 써야하는 곳은 사용불가)
+                let msg = this.age + '살' + this.name + '님은' + food + '를 먹습니다';   // this : 내 객체의 / 파이썬의 self와 같음. function(self, food): 이런식으로 썼음
+                alert(msg);
+            },
+            'toString' : function(){ // 원래 object에 있던 것을 쓰려는 것이기 때문에 그대로 써야함
+                let output = '';
+                for(let key in this){
+                    if(key != 'eat' && key != 'toString'){
+                        output += key + ' : ' + this[key] + '<br>';
+                    } // if문 끝   
+                } // for문 끝
+                return output;
+            } // toString끝
+        }; // person 객체
+        document.writeln(person+'<br>');
+        person.nickname = '동해번쩍이';
+        document.writeln('<b>nickname 추가 후<br></b>' + person+'<br>');
+        person.hobby = '노래';
+        document.writeln('<b>hobby 추가 후<br></b>' + person);
+    </script>
+</head>
+        
+<body>
+    
+</body>
+</html>
