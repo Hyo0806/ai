@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        span{color: blue;}
+    </style>
+    <script>
+        function remove(){
+            // 첫번째 h1태그 하나 제거(h1태그가 없을 경우, alert 출력)
+            var h1 = document.getElementsByTagName('h1'); // 없을경우 []가져옴
+            if(h1.length>0){
+            document.body.removeChild(h1[0]); // 위에서부터 지우기
+            }else{
+                alert('지울 h1태그가 없습니다');
+            }
+        };
+        
+        function append(){
+            // 마지막에 하나 추가하기
+            document.body.innerHTML += '<h1>HEADER</h1>';
+            var header = document.querySelectorAll('h1');
+                for(let i=0 ; i<header.length ; i++){
+                header[i].innerHTML += '<span>#<span>';
+            }
+        };
+
+        // function removeAll(){
+        //     var h1 = document.querySelectorAll('h1'); // 정적 nodeList. 한번 가져온것 기준으로 length가 계속 유효함
+        //     for(let i=0 ; i<h1.length ; i++){
+        //         document.body.removeChild(h1[i]);
+        //     }
+        function removeAll(){
+            var h1 = document.getElementsByTagName('h1'); // 라이브 HTML 선택. 그래서 getElementByTagName으로 쓸거면 아래가 달라져야함
+            var cnt = h1.length; // for문 수행횟수
+            for(let i=0 ; i<cnt ; i++){
+                document.body.removeChild(h1[0]);
+            }
+        };
+    </script>
+</head>
+        
+<body>
+    <button onclick="removeAll()">h1태그 다 제거하기</button>
+    <button onclick="remove()">h1태그 하나 제거하기</button>
+    <button onclick="append()">h1태그 하나 추가하기</button>
+    <h1>HEADER1</h1>
+    <h1>HEADER2</h1>
+    <h1>HEADER3</h1>
+    <h1>HEADER4</h1>
+</body>
+</html>

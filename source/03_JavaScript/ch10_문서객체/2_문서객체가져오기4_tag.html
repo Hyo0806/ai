@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    <script>
+        window.onload = function(){
+            var header = document.getElementsByTagName('h1'); // 배열
+
+            // for(let idx=0; idx<header.length ; idx++){ 기본for문. 이거나 for-in문 사용
+            //   header[idx].innerHTML += '#'+idx;}
+            
+            for(let idx in header){
+                header[idx].innerHTML += `#${idx}`;
+                }
+
+            // header.forEach((element, idx)=>{
+                // element.innerHTML += '#'+idx;}) 내가 만든 배열이 아니기 때문에 적용되지않음
+            };
+    </script>
+</head>
+        
+<body>
+    <h1>HEADER</h1>
+    <h1>HEADER</h1>
+    <h1>HEADER</h1>
+    <h1>HEADER</h1>
+    <h1>HEADER</h1>
+    <h1>HEADER</h1>
+</body>
+</html>
