@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            ul{overflow: hidden;}
+            li{float: left; list-style: none; margin: 3px;}
+        </style>
+        <script>
+            var overImg = ['ch11_img/0over.jpg', 'ch11_img/1over.jpg', 'ch11_img/2over.jpg', 'ch11_img/3over.jpg'];
+            var outImg = ['ch11_img/0out.jpg', 'ch11_img/1out.jpg', 'ch11_img/2out.jpg', 'ch11_img/3out.jpg'];
+
+            function buttonOver(n){
+                var imgs = document.getElementsByTagName('img');
+                for(let idx in imgs){
+                    imgs[idx].onmouseover = function(){
+                        this.setAttribute('src', overImg[idx]);
+                    }
+                    imgs[idx].onmouseout = 
+                };
+                //img[1].setAttribute('src', overImg[1]);
+
+            function buttonOut(n){
+                var img = document.getElementsByTagName('img');
+                img[n].setAttribute('src', outImg[n]);
+            };
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#" ><img src="ch11_img/0out.jpg" onmouseover="buttonOver(0)" onmouseout="buttonOut(0)"/></a></li>
+            <li><a href="#" ><img src="ch11_img/1out.jpg" onmouseover="buttonOver(1)" onmouseout="buttonOut(1)"/></a></li>
+            <li><a href="#" ><img src="ch11_img/2out.jpg" onmouseover="buttonOver(2)" onmouseout="buttonOut(2)"/></a></li>
+            <li><a href="#" ><img src="ch11_img/3out.jpg" onmouseover="buttonOver(3)" onmouseout="buttonOut(3)"/></a></li>
+        </ul>
+    </body>
+</html>

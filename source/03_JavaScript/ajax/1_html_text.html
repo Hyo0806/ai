@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        p{cursor: pointer;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js">//다운받아서 연결하는거 비추. 다른사람에게 없을수도 있으니까</script>
+    <script>
+        // window.onload와 같음
+        $(document).ready(function(){
+            // jQuery 문법. 이 안에서만 쓸 수 있음 : $('선택자').action(함수)();
+            // 1. html() : 해당 선택자에 html코드 삽입, 가져오기
+            // 2. text()
+            // 3. css('css속성', '값')
+            // 4. 이벤트 관련 함수 : click(콜백함수)
+
+            $('#p1').click(function(){
+                $(this).html('<b>click했네</b>');
+                //$(this).text('<b>click했네</b>'); 텍스트 그대로 가져옴. 태그 적용없이 그대로 문자로.
+                $(this).css('color','red').css('border', '1px solid orange');
+            });
+        });
+    </script>
+</head>
+        
+<body>
+    <p id="p1">click해봐</p>
+</body>
+</html>
