@@ -1,5 +1,6 @@
 II. SELECT문
 
+1. SELECT절
 	SELECT [DISTINCT] {*, column [Alias], ….}
 		FROM 데이블명
 		[WHERE condition]
@@ -15,10 +16,34 @@ II. SELECT문
 	condition  : column, 표현식, 상수 및 비교연산자
 	ORDER BY :정렬을 위한 옵션 (ASC :오름차순이며 default, DECS 내림차순)
 
+2. WHERE절
 	* WHERE조건과 비교연산자 
 		같다 : =
 		다르다 : <>, ^=, !=
 
 	* 논리연산자 : AND, OR, NOT
 
-	* 산술표현식 : 
+	* 산술표현식 : 산술 연산에 NULL이 포함되면 결과도 NULL
+		NVL(NULL일 수도 있는 필드명, 대체값)을 이용 : 필드명과 대체값은 타입이 일치
+
+	*연결연산자 (||) : 필드내용이나 문자를 연결
+
+	* 중복제거 : 결과는 기본적으로 오름차순정렬
+		SELECT DISTINCT 필드명 FROM 테이블; 
+
+	* SQL연산자
+		DISTINCT 필드; 필드 중복제거
+		BETWEEN a AND b : a부터 b (a,b값 포함. a가 작은 값) 
+		IN(list)            : list의 값 중 어느 하나와 일치한다
+		LIKE pattern       : 검색하고자 하는 값을 정확히 모를 경우 pattern과 일치하는지를 검색하며 pattern에는 다음의 두가지 와일드카드가 사용된다.
+			% : 문자가 없거나, 하나 이상의 문자가 어떤 값이 와도 상관없다.
+			_ : 하나의 문자가 어떤 값이 와도 상관없다
+		IS NULL                : null값을 가졌다
+		NOT BETWEEN a AND b : a와 b 사이에 있지 않다(a,b값 포함되지 않음)
+		NOT IN (list)            : list의 값과 일치하지 않는다.
+		NOT LIKE pattern       : 문자형태가 pattern과 일치하지 않는다.
+		NOT 필드 IS NULL (필드 IS NOT NULL) : null값을 갖지 않다
+
+3. ORDER BY절
+	* ORDER BY : 기본적으로 오름차순 정렬
+	* DESC : 내림차순
