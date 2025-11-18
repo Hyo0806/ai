@@ -1,0 +1,20 @@
+mySQL (주석 --+space)
+
+* DCL(계정생성, 권한부여, 권한박탈, 계정삭제)
+
+* DDL(제약조건 FK, 시퀀스 없음)
+	MySQL 타입 : 
+		numeric(n,d)
+			정수 : tinyint(1byte), smallint(2byte), mediumint(3byte)
+			         int/ integer(4byte), bigint(8byte)
+			실수 : float(n,d)(4byte), double(n,d)(8byte)
+		varchar(n)
+			문자 : char(n), text, mediumtext(16M), longtext(4GB)
+		date
+			날짜 : date, datetime, time
+
+	* 씨퀀스 대체 : auto_increment 필드(int)
+	* FK(외래키) 제약조건 아래에 기술해야함
+	* outer join - right(left) outer join
+
+* DML(AND:&&, OR:||, 연결연산자 대신 CONCAT사용, OUTER JOIN)
