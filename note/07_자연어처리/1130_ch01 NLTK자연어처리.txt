@@ -1,0 +1,20 @@
+▶1. NLTK 패키지 
+- 텍스트 전처리 : 토큰화(문장, 어절, 형태소 나누기), 정규표현식을 이용하여 불용어 처리, 어간추출
+- 품사태깅 : 단어별 품사를 식별
+
+	• sent_tokenize() : 문장단위로 쪼갠 list 반환
+	• word_tokenize() : 단어단위로 쪼갠 list 반환
+	• RegexpTokenizer : 토큰화할때 정규표현식 사용
+	
+▶2. 형태소(의미가 있는 가장 작은 단위) 분석
+- cf. 자연어 처리의 기본 : 형태소분석, 품사태깅
+	• 어간추출 1 : PosterStemmer 
+	• 어간추출 2 : LanscasterStemmer
+	• 어간추출 3 : RegexpStemmer
+
+▶3. 품사태깅
+	• pos_tag()
+
+▶ 4. 최빈단어 시각화
+	• 변수명 = Text(단어리스트)
+	• 변수명.dispersion_plot('텍스트')
