@@ -3,3 +3,4 @@ IDE/
 lecNote/
 desktop.ini
 .ipynb_checkpoints/
+.env
