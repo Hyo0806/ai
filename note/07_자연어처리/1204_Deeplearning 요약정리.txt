@@ -1,19 +1,57 @@
-• 인공지능학습(dl/ml) : 지도학습 vs 비지도학습 vs 강화학습
+▶ 인공지능학습(dl/ml) : 
+	• 지도학습 : 회귀분석 / 로지스틱회귀분석 = 이진분류 / 다중분류 → DNN
+	• 비지도학습 : 군집화
+	• 강화학습
 
-• DNN/RNN/LSTM/자연어처리
+▶ DNN/RNN/LSTM/자연어처리
 
-• 스케일 조정(정규화, 표준화)하는 목적? 
-	- 모델 계산의 안정성을 향상시키기 위하여
+▶ 스케일 조정(정규화, 표준화)하는 목적? 
+	→ 모델 계산의 안정성을 향상시키기 위하여
 
-• model = Sequential([]) : 순차적 레이어 모델 생성
-  model = Model(inputs= , outputs= )  : 병렬모델
+▶ model = Sequential([]) : 순차적 레이어 모델 생성
+    model = Model(inputs= , outputs= )  : 병렬모델
 	
-	이중분류의 출력층 : Dense(1, activation='sigmoid')
-	다중분류의 출력층 : Dense(n, activation='softmax')
+	• 이중분류의 출력층 : Dense(1, activation='sigmoid')
+	• 다중분류의 출력층 : Dense(n, activation='softmax')
 
-• 학습과정 설정
-	- 손실함수
-		categorical_crossentropy
-		sparse_categorical_crossentropy
-	- 평가지표 : accuracy, precision, recall
-	- accuracy 높이기 위한 방법들
+▶ 학습과정 설정
+	• 손실함수
+		⸰ categorical_crossentropy / sparse_categorical_crossentropy
+		⸰ optimizer(adam)
+
+	• 평가지표 : accuracy, precision, recall
+		⸰ accuracy(정확도) = (TN+TP) / (TN+FP+FN+TP)
+			[precision과 recall은 트레이드 오프 관계]
+		⸰ precision(정밀도) = TP / 예측을 1이라고 한 수(TP+FP)   
+			· 예측값 기준
+			· precision을 높이려면 → 1일 확률이 높은 것만 Positive로 예측함  → recall이 낮아질 수 있다
+		⸰ recall(재현률 = 민감도) = TP / 실제값이 1인 수(FN+TP)
+			· 실제값 기준
+			· recall을 높이려면 → 조금이라도 가능성이 있으면 Positive로 예측함 → precision이 낮아질 수 있다
+
+	• accuracy 높이기 위한 방법들
+		⸰ 데이터 확보
+		⸰ 모델 수정(레이어 추가, units수 증가)
+		⸰ epoch 조정
+		⸰ optimizer 변경
+
+	• 과적합 방지를 위한 방법
+		⸰ 과적합 방지(validation data 추가, 균형잡히지 않은 데이터 증강, 활성화함수 relu계열, tanh)
+		⸰ dropout
+
+    	• 모델 저장 : 
+		⸰ model.save('파일명') / save_model(model, '파일명')
+		⸰ load_model('파일명') 
+			· h5
+			· keras
+
+▶ 자연어처리 : 
+	• nltk, konlpy / mecab
+		⸰ 형태소추출(morphs) 
+		⸰ 명사만 추출(nouns)
+		⸰ 품사태깅(pos)
+			· pos(문장) → [('강','NNP'), (형태소, 품사),... ] : 튜플리스트 
+
+▶ RNN(LSTM/GRU,seq2seq) : 텍스트 분류, 텍스트 생성, 자연어생성, 시계열데이터예측(순서가 중요한 데이터), 작곡
+
+▶ CNN : 이미지 분류
