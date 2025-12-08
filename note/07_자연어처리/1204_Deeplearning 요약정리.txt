@@ -16,7 +16,7 @@
 
 ▶ 학습과정 설정
 	• 손실함수
-		⸰ categorical_crossentropy / sparse_categorical_crossentropy
+		⸰ categorical_crossentropy / sparse_categorical_crossentropy / binary_crossentropy(이진분류)
 		⸰ optimizer(adam)
 
 	• 평가지표 : accuracy, precision, recall
