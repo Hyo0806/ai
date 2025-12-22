@@ -5,3 +5,6 @@ desktop.ini
 .ipynb_checkpoints/
 .env
 10_1stProject/
+.venv/
+.idea/
+.vscode/
