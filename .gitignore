@@ -8,3 +8,4 @@ desktop.ini
 .venv/
 .idea/
 .vscode/
+__pycache__/
