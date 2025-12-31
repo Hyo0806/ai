@@ -10,7 +10,7 @@
 # .gitignore파일에 .venv/, .idea/추가
 # pip freeze > requirments.txt
 # requirments.txt 팀원끼리 공유. 가상환경에 깔린 라이브러리들
-# requirments.txt에 있는 라이브러리를 독같이 설치 : pip install -r requirments.txt
+# requirments.txt에 있는 라이브러리를 독같이 설치 : pip install -r requirements.txt
 
 
 import joblib
