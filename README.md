@@ -1,7 +1,5 @@
 # AI 모델링 및 LLM 학습일지
 
-**본 레파지토리는 수료일(26.02.12)에 삭제될 예정**
-
 # CURRICULUM
 <img width="725" height="881" alt="Image" src="https://github.com/user-attachments/assets/cffe86cb-3a0b-4151-954c-936f54749bc2" />
 
