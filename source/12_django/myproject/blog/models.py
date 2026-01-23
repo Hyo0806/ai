@@ -44,7 +44,7 @@ class Post(models.Model): # 테이블명 : blog_post
 
     def __str__(self): # 테이블의 한 레코드가 작업대상
         updated = timezone.localtime(self.update_at).strftime('%Y-%m-%d %H:%M')
-        return '{}.제목:{} - {}작성. {}최종수정'.format(self.id ,self.title, self.create_at, updated)
+        return '{}. 제목:{} - {}작성. {}최종수정'.format(self.id ,self.title, self.create_at, updated)
     
     class Meta: # 테이블의 모든 레코드가 작업대상
         # db_table = 'blog_post' 테이블 이름 수정할때는 이렇게함. 근데 아무도 테이블 이름 변경안함
