@@ -34,8 +34,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = ['127.0.0.1','192.168.0.243']
+# python manage.py runserver 192.168.0.52:80
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default='127.0.0.1').split(',')
 
 # Application definition
 
@@ -46,10 +47,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize", # intcomma(세자리마다 ,)필터 사용
     "blog", # 앱등록
     "accounts",
     "book",
-    "django.contrib.humanize", # intcomma(세자리마다 ,)필터 사용
+    'article', # v1. GenericView 이용(paging처리) / v2. 검색기능 / v3. 파일첨부(ch08),
+    'filetest',
 ]
 
 MIDDLEWARE = [
@@ -130,15 +133,28 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
+'''
+Django 프로젝트가 실행 → 설정이 셋팅(settings.py)
+1. django.conf.global_settings.py 로드(모든 기본값)
+2. 사용자의 settings.py로드(프로젝트별로 존재)
+'''
 # 개발 환경
-STATIC_URL = "static/" # 앱폴더 밑의 static만 static으로 인식
+STATIC_URL = "/static/" # 앱폴더 밑의 static만 static으로 인식
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'myproject', 'static')
 ]
 
-# 배포 후 운영환경(2월)
+# 배포 후 운영환경(2월) : 모든 static을 STATIC_ROOT로 옮기기 - python manage.py collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, '_staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 업로드한 파일(사용자)이 저장될 폴더와 액세스 url 세팅
+# /media/folder/a.png url로 접근 → _media/folder/a.png저장 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
+
+# myproject/urls.py에 MEDIA_URL과 ROOT 연결
