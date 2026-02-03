@@ -102,26 +102,27 @@ DATABASES = {
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    # }, # 다른 개인정보와 유사한 비밀번호 사용 불가
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+        "OPTIONS":{"min_length":2},
+    }, # 최소 2자 이상 비밀번호
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    # }, # 통상적으로 자주 사용되는 비밀번호 사용 불가
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    # }, # 숫자만 이루어진 비밀번호 사용 불가
 ]
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
-# LANGUAGE_CODE = "ko-kr" # 장고 admin 페이지 언어
+# LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ko-kr" # 장고 admin 페이지 언어
 
 # TIME_ZONE = "UTC"
 TIME_ZONE = "Asia/Seoul"
@@ -158,3 +159,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 
 # myproject/urls.py에 MEDIA_URL과 ROOT 연결
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # 테스트용. 메일 내용이 콘솔에 뿌려짐
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_USE_TLS=False # gmail의 경우만 추가. 네이버 사용시 빼기
