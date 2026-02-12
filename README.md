@@ -1,8 +1,5 @@
 # AI 모델링 및 LLM 학습일지
 
-# CURRICULUM
-<img width="725" height="881" alt="Image" src="https://github.com/user-attachments/assets/cbe1d905-c14f-435d-b30b-65639b6fdbd2" />
-
 # SKIL
 | 구분 | 기술 |
 | :--- | :--- |
@@ -12,3 +9,7 @@
 | **WEB Standard** | <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"> |
 | **WEB Framework** | <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"> <img src="https://img.shields.io/badge/django-FCC624?style=for-the-badge&logo=django&logoColor=black"> <img src="https://img.shields.io/badge/fastapi-FF0000?style=for-the-badge&logo=fastapi&logoColor=white"> <img src="https://img.shields.io/badge/Jinja2-B41717?style=for-the-badge&logo=jinja&logoColor=white">|
 | **Version Control** | <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> |
+
+
+# CURRICULUM
+<img width="725" height="881" alt="Image" src="https://github.com/user-attachments/assets/cbe1d905-c14f-435d-b30b-65639b6fdbd2" />
