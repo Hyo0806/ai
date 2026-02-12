@@ -1,7 +1,7 @@
 # AI 모델링 및 LLM 학습일지
 
 # CURRICULUM
-<img width="725" height="881" alt="Image" src="https://github.com/user-attachments/assets/cffe86cb-3a0b-4151-954c-936f54749bc2" />
+<img width="725" height="881" alt="Image" src="https://github.com/user-attachments/assets/cbe1d905-c14f-435d-b30b-65639b6fdbd2" />
 
 # SKIL
 | 구분 | 기술 |
